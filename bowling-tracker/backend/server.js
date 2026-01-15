@@ -1,3 +1,26 @@
+// ============================================================================
+// BOWLING COMPETITION TRACKER - FULL STACK APPLICATION
+// ============================================================================
+// This is a complete guide with code snippets for deploying on Raspberry Pi
+// 
+// PROJECT STRUCTURE:
+// bowling-tracker/
+// ├── frontend/
+// │   ├── src/
+// │   ├── package.json
+// │   └── Dockerfile
+// ├── backend/
+// │   ├── server.js
+// │   ├── database.js
+// │   ├── routes/
+// │   ├── package.json
+// │   └── Dockerfile
+// ├── docker-compose.yml
+// └── README.md
+
+// ============================================================================
+// STEP 1: BACKEND - server.js
+// ============================================================================
 const express = require('express');
 const cors = require('cors');
 const bcrypt = require('bcrypt');

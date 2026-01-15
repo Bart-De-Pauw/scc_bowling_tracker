@@ -1,0 +1,738 @@
+/* ============================================================================
+   BOWLING TRACKER - MAIN CSS STYLING
+   File: frontend/src/App.css
+   ============================================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
+  --light-bg: #ecf0f1;
+  --white: #ffffff;
+  --dark-text: #2c3e50;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* ============================================================================
+   GLOBAL STYLES
+   ============================================================================ */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* ============================================================================
+   APP LAYOUT
+   ============================================================================ */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ============================================================================
+   NAVIGATION
+   ============================================================================ */
+
+.navigation {
+  background-color: var(--primary-color);
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  color: var(--white);
+  height: 70px;
+}
+
+.nav-brand {
+  font-size: 28px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: var(--white);
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 16px;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+  background-color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.logout-btn {
+  background-color: var(--danger-color);
+  margin-left: 20px;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+/* ============================================================================
+   LOGIN PAGE
+   ============================================================================ */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-card {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card h1 {
+  margin-bottom: 30px;
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 28px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--light-bg);
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  transition: var(--transition);
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.error-message {
+  background-color: #ffe6e6;
+  color: var(--danger-color);
+  padding: 12px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  border-left: 4px solid var(--danger-color);
+}
+
+.message {
+  background-color: #e6f7e6;
+  color: var(--success-color);
+  padding: 12px;
+  border-radius: var(--border-radius);
+  margin-top: 20px;
+  border-left: 4px solid var(--success-color);
+}
+
+.login-help {
+  text-align: center;
+  color: #7f8c8d;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* ============================================================================
+   BUTTONS
+   ============================================================================ */
+
+.btn-primary,
+.btn-secondary {
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--light-bg);
+  color: var(--primary-color);
+  border: 2px solid var(--secondary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+/* ============================================================================
+   DASHBOARD
+   ============================================================================ */
+
+.dashboard {
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.dashboard h1 {
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+}
+
+.dashboard-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  color: var(--white);
+  box-shadow: var(--box-shadow);
+}
+
+.dashboard-card h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  gap: 12px;
+}
+
+.leaderboard-item:last-child {
+  border-bottom: none;
+}
+
+.medal {
+  font-size: 20px;
+  min-width: 30px;
+  text-align: center;
+}
+
+.medal-1 { font-size: 24px; }
+.medal-2 { font-size: 22px; }
+.medal-3 { font-size: 20px; }
+
+.player-name,
+.team-name {
+  flex: 1;
+  font-weight: 600;
+}
+
+.player-score,
+.team-score {
+  font-weight: bold;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+/* ============================================================================
+   LOADING
+   ============================================================================ */
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: var(--white);
+}
+
+/* ============================================================================
+   PLAYERS PAGE
+   ============================================================================ */
+
+.players-page {
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.players-page h1 {
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.player-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  color: var(--white);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.player-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 15px;
+}
+
+.player-header h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-active {
+  background-color: var(--success-color);
+  color: var(--white);
+}
+
+.status-invited {
+  background-color: var(--warning-color);
+  color: var(--white);
+}
+
+.status-inactive {
+  background-color: #95a5a6;
+  color: var(--white);
+}
+
+.player-details p {
+  margin: 8px 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.player-details strong {
+  opacity: 1;
+}
+
+/* ============================================================================
+   EVENINGS PAGE
+   ============================================================================ */
+
+.evenings-page,
+.scoring-page,
+.leaderboards-page {
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.evenings-page h1,
+.scoring-page h1,
+.leaderboards-page h1 {
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.evenings-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.evening-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  color: var(--white);
+  box-shadow: var(--box-shadow);
+}
+
+.evening-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.evening-header h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.evening-card p {
+  margin: 10px 0;
+}
+
+/* ============================================================================
+   SCORING PAGE
+   ============================================================================ */
+
+.scores-table {
+  margin-top: 30px;
+}
+
+.scores-table h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table thead {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+table th {
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--light-bg);
+}
+
+table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+table input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid var(--light-bg);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+table input[type="number"]:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* ============================================================================
+   LEADERBOARDS PAGE
+   ============================================================================ */
+
+.view-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.toggle-btn {
+  padding: 10px 20px;
+  border: 2px solid var(--secondary-color);
+  background: var(--white);
+  color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.toggle-btn.active {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+.leaderboard-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.leaderboard-table tbody tr {
+  transition: var(--transition);
+}
+
+.leaderboard-table tbody tr.medal-1 {
+  background-color: #ffd700;
+  font-weight: bold;
+}
+
+.leaderboard-table tbody tr.medal-2 {
+  background-color: #c0c0c0;
+  font-weight: bold;
+}
+
+.leaderboard-table tbody tr.medal-3 {
+  background-color: #cd7f32;
+  color: var(--white);
+  font-weight: bold;
+}
+
+.leaderboard-table tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+.leaderboard-table .rank {
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  width: 60px;
+}
+
+.leaderboard-table .score-cell {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* ============================================================================
+   ADMIN PAGE
+   ============================================================================ */
+
+.admin-page {
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.admin-page h1 {
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--light-bg);
+}
+
+.tab-btn {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: #7f8c8d;
+  transition: var(--transition);
+}
+
+.tab-btn.active {
+  color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+}
+
+.tab-btn:hover {
+  color: var(--primary-color);
+}
+
+.admin-form {
+  max-width: 500px;
+  margin-top: 30px;
+}
+
+.admin-form h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-link {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .logout-btn {
+    margin-left: 10px;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .players-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .evenings-list {
+    grid-template-columns: 1fr;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  table th,
+  table td {
+    padding: 8px 10px;
+  }
+
+  .login-card {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+
+  .dashboard {
+    padding: 20px;
+  }
+
+  .players-page,
+  .evenings-page,
+  .scoring-page,
+  .leaderboards-page,
+  .admin-page {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-link {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .dashboard h1,
+  .players-page h1,
+  .evenings-page h1,
+  .scoring-page h1,
+  .leaderboards-page h1,
+  .admin-page h1 {
+    font-size: 24px;
+  }
+}

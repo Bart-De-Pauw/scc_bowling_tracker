@@ -1,5 +1,7 @@
 # Bowling Competition Tracker - Complete Setup Guide
 
+https://claude.ai/chat/d6f892a3-2381-4385-a5db-2e1f4473ddd6
+
 ## Overview
 
 This is a full-stack bowling league management system built with:

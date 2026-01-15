@@ -1,0 +1,49 @@
+# ============================================================================
+# DOCKER-COMPOSE.YML (ROOT DIRECTORY)
+# ============================================================================
+
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: bowling-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - DB_PATH=/data/bowling.db
+      - JWT_SECRET=change-this-to-random-string-in-production
+      - FRONTEND_URL=http://localhost:3000
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
+    networks:
+      - bowling-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: bowling-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - bowling-network
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000
+
+volumes:
+  data:
+
+networks:
+  bowling-network:
+    driver: bridge
